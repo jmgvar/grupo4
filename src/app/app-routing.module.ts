@@ -14,7 +14,7 @@ const routes: Routes = [
   { path:'register', component: RegisterComponent },
   { path:'home', component: HomeComponent }, 
   { path:'userList', component: UserListComponent },
-  { path:'user/:id', component: UserEditionComponent },
+  { path:'user', component: UserEditionComponent },
   { path:'resourceList', component: ResourceListComponent },
   { path:'resource/:id', component: ResourceDisplayedComponent }
 ];

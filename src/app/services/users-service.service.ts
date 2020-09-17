@@ -21,16 +21,16 @@ export class UsersServiceService {
 
   updateUser(user : User): Observable<any> {
 
-    return this.http.put('/api/users/2', user);
+    return this.http.put('https://reqres.in/api/users/2', user);
 
   }
 
   deleteUser(user : User): Observable<any> {
-    return this.http.delete('/api/users/2');
+    return this.http.delete('https://reqres.in/api/users/2');
   }
 
   getUser(): Observable<any> {
-    return this.http.get('/api/users/2');
+    return this.http.get('https://reqres.in/api/users/2');
   }
 
 

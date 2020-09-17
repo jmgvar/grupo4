@@ -15,7 +15,7 @@ export class UserEditionComponent implements OnInit {
     
     userService.getUser().subscribe(data => {
       console.log(data.status);
-      this.user = data['results'];
+      this.user = data['data'];
     });;
 
 

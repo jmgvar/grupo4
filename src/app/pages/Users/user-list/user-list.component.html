@@ -2,13 +2,14 @@
 
 <ul>
     <li class="text" *ngFor="let item of userList">
-      {{item.firstName}} {{item.lastName}} {{item.email}}
+      {{item.first_name}} &nbsp; {{item.last_name}} &nbsp; {{item.email}} &nbsp;
 
-      <a [routerLink]="['/edit', item.id]">Editar</a>
-      <a [routerLink]="['/delete', item.id]">Borrar</a>
-      <a [routerLink]="['/show', item.id]">Consultar</a>
+      <a [routerLink]="['/edit', item.id]">Editar</a>&nbsp;
+      <a (click)="deleteUser(item)">Borrar</a>&nbsp;
+      <a [routerLink]="['/user']">Consultar</a>&nbsp;
     </li>
 
-    <a [routerLink]="['/new']">Nuevo</a>
+    <br>
+    <a [routerLink]="['/user/1']">Nuevo</a>
 
   </ul>
