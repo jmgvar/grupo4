@@ -11,6 +11,8 @@ import { UserEditionComponent } from './pages/Users/user-edition/user-edition.co
 import { ResourceListComponent } from './pages/Resources/resource-list/resource-list.component';
 import { ResourceDisplayedComponent } from './pages/Resources/resource-displayed/resource-displayed.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { ResourceDisplayedComponent } from './pages/Resources/resource-displayed
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
