@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { UserListComponent } from './pages/Users/user-list/user-list.component';
 import { UserEditionComponent } from './pages/Users/user-edition/user-edition.component';
 import { ResourceListComponent } from './pages/Resources/resource-list/resource-list.component';
 import { ResourceDisplayedComponent } from './pages/Resources/resource-displayed/resource-displayed.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { ResourceDisplayedComponent } from './pages/Resources/resource-displayed
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
