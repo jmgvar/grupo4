@@ -1,1 +1,14 @@
-<p>user-list works!</p>
+<h1>listado de usuarios</h1>
+
+<ul>
+    <li class="text" *ngFor="let item of userList">
+      {{item.firstName}} {{item.lastName}} {{item.email}}
+
+      <a [routerLink]="['/edit', item.id]">Editar</a>
+      <a [routerLink]="['/delete', item.id]">Borrar</a>
+      <a [routerLink]="['/show', item.id]">Consultar</a>
+    </li>
+
+    <a [routerLink]="['/new']">Nuevo</a>
+
+  </ul>
