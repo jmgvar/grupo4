@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Admin } from '../../models/admin';
 
 import { AuthenticationService } from '../../services/authentication.service';
+import { LocalStorageServiceService } from '../../services/local-storage-service.service';
  
 @Component({
   selector: 'app-login',
@@ -11,7 +13,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService, private router: Router, private localStorageService: LocalStorageServiceService) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +26,9 @@ export class LoginComponent implements OnInit {
     .toPromise()
     .then(data => {
       console.log("Usuario existe ", data);
-      alert(data);
+      this.localStorageService.setUserLogged('true');
+      this.router.navigate(['home']);
+      //alert(data);
     })
     .catch(error => {
       alert("El usuario no existe, debe registrarse primero !");

@@ -8,15 +8,17 @@ import { ResourceListComponent } from './pages/Resources/resource-list/resource-
 import { UserEditionComponent } from './pages/Users/user-edition/user-edition.component';
 import { UserListComponent } from './pages/Users/user-list/user-list.component';
 
+import { AuthGuardServiceGuard } from './guards/auth-guard-service.guard';
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path:'register', component: RegisterComponent },
-  { path:'home', component: HomeComponent }, 
-  { path:'userList', component: UserListComponent },
-  { path:'user/:id', component: UserEditionComponent },
-  { path:'resourceList', component: ResourceListComponent },
-  { path:'resource/:id', component: ResourceDisplayedComponent }
+  { path:'home', component: HomeComponent, canActivate: [AuthGuardServiceGuard] }, 
+  { path:'userList', component: UserListComponent, canActivate: [AuthGuardServiceGuard] },
+  { path:'user/:id', component: UserEditionComponent, canActivate: [AuthGuardServiceGuard] },
+  { path:'resourceList', component: ResourceListComponent, canActivate: [AuthGuardServiceGuard] },
+  { path:'resource/:id', component: ResourceDisplayedComponent, canActivate: [AuthGuardServiceGuard] }
 ];
 
 @NgModule({
