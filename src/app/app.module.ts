@@ -12,6 +12,8 @@ import { UserListComponent } from './pages/Users/user-list/user-list.component';
 import { UserEditionComponent } from './pages/Users/user-edition/user-edition.component';
 import { ResourceListComponent } from './pages/Resources/resource-list/resource-list.component';
 import { ResourceDisplayedComponent } from './pages/Resources/resource-displayed/resource-displayed.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ResourceDisplayedComponent } from './pages/Resources/resource-displayed
     UserListComponent,
     UserEditionComponent,
     ResourceListComponent,
-    ResourceDisplayedComponent
+    ResourceDisplayedComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

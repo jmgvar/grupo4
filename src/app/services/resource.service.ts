@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment'
 import { HttpClient } from '@angular/common/http';
-// import { Resource } from '../models/resource';
+import { Resource } from 'src/app/models/resource'
 import { Observable } from 'rxjs';
 
 
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ResourceService {
 
-  //listResource: Array<Resource> = [];
+  listResource: Array<Resource> = [];
 
   constructor(protected http: HttpClient) { }
 
