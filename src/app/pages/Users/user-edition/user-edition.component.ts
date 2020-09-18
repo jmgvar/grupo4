@@ -36,7 +36,7 @@ export class UserEditionComponent implements OnInit {
       this.userService.updateUser(this.user).subscribe();
     }
 
-    //this.router.navigate(["/usersList"]);
+    this.router.navigate(["/userList"]);
   }
 
 
