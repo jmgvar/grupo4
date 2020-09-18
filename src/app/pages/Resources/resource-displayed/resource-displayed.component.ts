@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Resource } from 'src/app/models/Resource';
+import { ResourceService } from 'src/app/services/resource.service';
 
 @Component({
   selector: 'app-resource-displayed',
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResourceDisplayedComponent implements OnInit {
 
-  constructor() { }
+  resource: Resource;
+  resourceAd: Resource;
+
+  constructor(private resourceService: ResourceService) {
+    resourceService.getResource().subscribe(data => {
+      console.log(data.status);
+      this.resource = data['data'];
+      this.resourceAd = data['ad'];
+    });;
+   }
 
   ngOnInit(): void {
   }
