@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   constructor(private httpClient: HttpClient) { }
 
-  login (admin: Admin) : Observable<any> {
+  login(admin: Admin) : Observable<any> {
     
     /**
      * for success
