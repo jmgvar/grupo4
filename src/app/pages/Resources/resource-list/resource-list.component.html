@@ -1,1 +1,23 @@
-<p>resource-list works!</p>
+<div class="col-md-12 resource-container">
+    <h2 style="margin: auto"> Resource List</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>Pantone Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of resourceList">
+        <td class="hidden">{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.year}}</td>
+        <td>{{item.color}}</td>
+        <td>{{item.pantone_value}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

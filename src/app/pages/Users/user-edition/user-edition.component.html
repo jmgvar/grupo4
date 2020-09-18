@@ -1,3 +1,12 @@
-<p>consulta usuarios</p>
+<p>Consulta usuario</p>
 
-{{ user.firstName }} - {{ user.lastName }} {{ user.email }}
+{{ user.first_name }} &nbsp; {{ user.last_name }} &nbsp; {{ user.email }}
+
+<form #f="ngForm">
+    <input type="text" name="user.first_name" placeholder="nombre" ngModel />
+    <input type="text" name="user.last_name" placeholder="apellidos" ngModel />
+    <input type="text" name="user.email" placeholder="email" ngModel />
+
+    
+<button type="submit" (click)="saveUser()">Guardar</button>
+</form>

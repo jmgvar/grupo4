@@ -14,8 +14,8 @@ export class UserListComponent implements OnInit {
 
   constructor(private userService: UsersServiceService) {
     userService.getUsers().subscribe(data => {
-      console.log(data.status);
-      this.userList = data['results'];
+      console.log("Este es el estado:" + data.status);
+      this.userList = data['data'];
     });;
   }
 
@@ -24,6 +24,8 @@ export class UserListComponent implements OnInit {
 
   deleteUser(): void {
     this.userService.deleteUser(this.user).subscribe();
+
+    this.userList.splice(1,1);
   }
 
 }
