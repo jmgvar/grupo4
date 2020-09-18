@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsersServiceService } from 'src/app/services/users-service.service';
 import { User } from 'src/app/user';
 
@@ -11,7 +12,7 @@ export class UserEditionComponent implements OnInit {
 
   user: User;
 
-  constructor(private userService: UsersServiceService) { 
+  constructor(private userService: UsersServiceService, private router: Router) { 
     
     userService.getUser().subscribe(data => {
       console.log(data.status);
@@ -27,10 +28,15 @@ export class UserEditionComponent implements OnInit {
   saveUser(): void {
 
     if (this.user.id) {
+
+      console.log("Se crea el usuario");
       this.userService.createUser(this.user).subscribe();
     } else {
+      console.log("Se modifica el usuario");
       this.userService.updateUser(this.user).subscribe();
     }
+
+    //this.router.navigate(["/usersList"]);
   }
 
 

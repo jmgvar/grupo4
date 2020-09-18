@@ -10,6 +10,7 @@ import { UserListComponent } from './pages/Users/user-list/user-list.component';
 import { UserEditionComponent } from './pages/Users/user-edition/user-edition.component';
 import { ResourceListComponent } from './pages/Resources/resource-list/resource-list.component';
 import { ResourceDisplayedComponent } from './pages/Resources/resource-displayed/resource-displayed.component';
+import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

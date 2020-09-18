@@ -2,10 +2,11 @@
 
 {{ user.first_name }} &nbsp; {{ user.last_name }} &nbsp; {{ user.email }}
 
+<form #f="ngForm">
+    <input type="text" name="user.first_name" placeholder="nombre" ngModel />
+    <input type="text" name="user.last_name" placeholder="apellidos" ngModel />
+    <input type="text" name="user.email" placeholder="email" ngModel />
 
-
-<!--<input type="text" [(ngModel)] = "user.first_name" placeholder="nombre"/>
-<input type="text" [(ngModel)] = "user.last_name" placeholder="apellidos"/>
-<input type="text" [(ngModel)] = "user.email" placeholder="email"/>
--->
-<button (click)="saveUser()">Guardar</button>
+    
+<button type="submit" (click)="saveUser()">Guardar</button>
+</form>
