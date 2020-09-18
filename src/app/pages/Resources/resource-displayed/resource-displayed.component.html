@@ -1,1 +1,30 @@
-<p>resource-displayed works!</p>
+<div class="col-md-12 resource-container">
+    <h2 style="margin: auto"> Resource Single</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Color</th>
+        <th>Pantone Value</th>
+        <th>Company</th>
+        <th>Url</th>
+        <th>Text</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="hidden">{{resource.id}}</td>
+        <td>{{resource.name}}</td>
+        <td>{{resource.year}}</td>
+        <td>{{resource.color}}</td>
+        <td>{{resource.pantone_value}}</td>
+        <td>{{resourceAd.company}}</td>
+        <td>{{resourceAd.url}}</td>
+        <td>{{resourceAd.text}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <a [routerLink]="['/resourceList']" >Resource List</a> 
+  </div>

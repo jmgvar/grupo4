@@ -4,4 +4,7 @@ export class Resource {
     year: number;
     color: string;
     pantone_value: string;
+    company: string;
+    url: string;
+    text: string;
 }
