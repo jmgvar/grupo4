@@ -13,25 +13,28 @@ import { LocalStorageServiceService } from '../../services/local-storage-service
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authenticationService: AuthenticationService, private router: Router, private localStorageService: LocalStorageServiceService) { }
+  errorMessage = '';
+
+  constructor(private authenticationService: AuthenticationService, private route: Router, private localStorageService: LocalStorageServiceService) { }
 
   ngOnInit(): void {
+    if(this.localStorageService.isUserLogged()) {
+      this.route.navigate(['home']);
+    }
   }
 
   onSubmit(admin: Admin): void {
-    console.log("admin: ", admin);
 
     this.authenticationService
     .login(admin)
     .toPromise()
     .then(data => {
-      console.log("Usuario existe ", data);
-      this.localStorageService.setUserLogged('true');
-      this.router.navigate(['home']);
-      //alert(data);
+      this.errorMessage = '';
+      this.localStorageService.setUserLogged('true',admin.email);
+      this.route.navigate(['home']);
     })
     .catch(error => {
-      alert("El usuario no existe, debe registrarse primero !");
+      this.errorMessage = error.error;
     });
 
   }

@@ -11,7 +11,8 @@ export class LocalStorageServiceService {
     return localStorage.getItem('userLogged') === 'true';
   }
 
-  setUserLogged (userLogged: string ) {
+  setUserLogged (userLogged: string, username: string ) {
     localStorage.setItem('userLogged', userLogged);
+    localStorage.setItem('username', username);
   }
 }
