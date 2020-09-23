@@ -1,0 +1,12 @@
+.customContent {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.customRow {
+    display: contents;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
